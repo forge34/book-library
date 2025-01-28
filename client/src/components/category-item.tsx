@@ -1,7 +1,6 @@
-
-type CategoryItemProps = {
+interface CategoryItemProps {
   name: string;
-};
+}
 
 export default function CategoryItem(props: CategoryItemProps) {
   return (
