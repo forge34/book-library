@@ -4,7 +4,7 @@ import User from "../assets/user.svg";
 
 export default function Header() {
   return (
-    <div className="flex flex-row p-2 gap-4 items-center">
+    <div className="flex flex-row p-2 gap-4 items-center mb-4">
       <h1 className="text-4xl font-serif">BookHaven</h1>
       <SearchBar />
       <div className="flex flex-row ml-auto text-white rounded-4xl bg-primary py-2 px-3">
