@@ -48,12 +48,10 @@ export default function CategorySection() {
         text="Show Filters"
       />
       <div
-        className={` flex flex-col md:py-2 md:px-4 overflow-hidden absolute md:static
-                    transition-all md:transition-none  ease-in-out h-full bg-white rounded-r-2xl 
-                     flex-none ${showClasses} duration-500 md:w-fit md:opacity-100 box-border`}
+        className={`absolute flex h-full flex-none flex-col overflow-hidden rounded-r-2xl bg-white transition-all ease-in-out md:static md:px-4 md:py-2 md:transition-none ${showClasses} box-border duration-500 md:w-fit md:opacity-100`}
       >
         <div className="flex flex-row overflow-hidden">
-          <h1 className="text-2xl mb-2 self-center">Categories</h1>
+          <h1 className="mb-2 self-center text-2xl">Categories</h1>
           {isTabletOrMobile && (
             <img
               onClick={() => {

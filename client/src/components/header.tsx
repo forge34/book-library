@@ -8,15 +8,15 @@ function Row1({ mobile }: { mobile: boolean }) {
     <>
       {mobile ? (
         <>
-          <div className="flex-row flex w-full">
-            <h1 className="text-4xl font-serif">BookHaven</h1>
-            <div className="flex flex-row ml-auto text-white rounded-4xl bg-primary py-2 px-3">
+          <div className="flex w-full flex-row">
+            <h1 className="font-serif text-4xl">BookHaven</h1>
+            <div className="bg-primary ml-auto flex flex-row rounded-4xl px-3 py-2 text-white">
               <img className="invert" src={Cart} />
               <h3 className="ml-4 text-lg">0$</h3>
             </div>
 
             <img
-              className="border p-1 border-solid rounded-3xl ml-2"
+              className="ml-2 rounded-3xl border border-solid p-1"
               src={User}
             />
           </div>
@@ -24,15 +24,15 @@ function Row1({ mobile }: { mobile: boolean }) {
         </>
       ) : (
         <>
-          <h1 className="text-4xl font-serif">BookHaven</h1>
+          <h1 className="font-serif text-4xl">BookHaven</h1>
 
           <SearchBar />
-          <div className="flex flex-row ml-auto text-white rounded-4xl bg-primary py-2 px-3">
+          <div className="bg-primary ml-auto flex flex-row rounded-4xl px-3 py-2 text-white">
             <img className="invert" src={Cart} />
             <h3 className="ml-4 text-xl">0$</h3>
           </div>
           <img
-            className="border p-1 border-solid rounded-3xl ml-2"
+            className="ml-2 rounded-3xl border border-solid p-1"
             src={User}
           />
         </>
@@ -45,7 +45,7 @@ export default function Header() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   return (
-    <div className="flex flex-col lg:flex-row p-2 gap-4 items-center mb-4 ">
+    <div className="mb-4 flex flex-col items-center gap-4 p-2 lg:flex-row">
       <Row1 mobile={isTabletOrMobile} />
     </div>
   );

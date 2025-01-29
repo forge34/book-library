@@ -6,15 +6,15 @@ interface BookCardProps {
 
 export default function BookCard(props: BookCardProps) {
   return (
-    <div className="bg-white flex flex-col rounded-4xl w-fit">
+    <div className="flex w-fit flex-col rounded-4xl bg-white">
       <div>
         <img className="rounded-t-2xl" src={props.imgUrl} />
       </div>
 
-      <div className="flex flex-col py-1 px-2 h-full">
-        <h3 className="text-xl text-primary font-bold">{props.title}</h3>
+      <div className="flex h-full flex-col px-2 py-1">
+        <h3 className="text-primary text-xl font-bold">{props.title}</h3>
         <p className="text-hover-accent font-bold">{props.price + " $"}</p>
-        <button className="bg-accent self-center rounded-2xl text-background py-1 px-3 font-black mb-2 mt-auto">
+        <button className="bg-accent text-background mt-auto mb-2 self-center rounded-2xl px-3 py-1 font-black">
           Add to cart
         </button>
       </div>

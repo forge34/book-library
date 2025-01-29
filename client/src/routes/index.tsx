@@ -9,10 +9,10 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <div className="flex flex-col lg:flex-row ">
+      <div className="flex flex-col lg:flex-row">
         <CategorySection />
 
-        <div className="grid grid-rows-3 grid-cols-2 lg:grid-cols-4  px-4 gap-2 lg:gap-6 w-full">
+        <div className="grid w-full grid-cols-2 grid-rows-3 gap-2 px-4 lg:grid-cols-4 lg:gap-6">
           <BookCard
             title="Atomic habits"
             price={20}
