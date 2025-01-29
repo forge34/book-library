@@ -12,7 +12,7 @@ describe("Renders props", () => {
     );
 
     expect(screen.getByRole("heading")).toHaveTextContent("Atomic habits");
-    expect(screen.getByRole("img")).toBeInTheDocument()
-    expect(screen.getByRole("paragraph")).toHaveTextContent("20$")
+    expect(screen.getByRole("img")).toBeInTheDocument();
+    expect(screen.getByRole("paragraph")).toHaveTextContent("20$");
   });
 });

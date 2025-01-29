@@ -2,7 +2,7 @@ import SearchIcon from "../assets/search.svg";
 
 export default function SearchBar() {
   return (
-    <div className="flex flex-row px-0.5  text-lg rounded-2xl">
+    <div className="flex flex-row rounded-2xl px-0.5 text-lg">
       <input
         className="px-1"
         type="search"
