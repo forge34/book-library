@@ -34,7 +34,7 @@ export default function CategorySection() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const [expanded, setExpanded] = useState(false);
 
-  const showClasses = expanded ? "w-100 " : "w-0 ";
+  const showClasses = expanded ? "w-100 px-4 py-2" : "w-0 p-0 ";
 
   function handleShowFilter() {
     setExpanded(true);
@@ -43,7 +43,7 @@ export default function CategorySection() {
   return (
     <>
       <Button
-        styles={`md:hidden ${expanded ? "invisible" : "visible"}`}
+        styles={`md:hidden self-start ml-8 mb-2 ${expanded ? "invisible" : "visible"}`}
         clickHandler={handleShowFilter}
         text="Show Filters"
       />
