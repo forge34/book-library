@@ -6,10 +6,10 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="flex flex-col lg:flex-row px-4 lg:px-0">
+      <div className="flex flex-col lg:flex-row ">
         <CategorySection />
 
-        <div className="grid grid-rows-3 grid-cols-2 lg:grid-cols-4 ml-4  gap-2 lg:gap-6 w-full">
+        <div className="grid grid-rows-3 grid-cols-2 lg:grid-cols-4  px-4 gap-2 lg:gap-6 w-full">
           <BookCard
             title="Atomic habits"
             price={20}
