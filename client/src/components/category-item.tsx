@@ -4,9 +4,9 @@ interface CategoryItemProps {
 
 export default function CategoryItem(props: CategoryItemProps) {
   return (
-    <div>
+    <div className="flex flex-row items-center overflow-hidden">
       <input className="mr-1 mt-2 mb-2" type="radio" name="category" />
-      <span>{props.name}</span>
+      <span className="font-light">{props.name}</span>
     </div>
   );
 }
