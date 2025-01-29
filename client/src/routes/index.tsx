@@ -1,11 +1,14 @@
-import BookCard from "./components/book-card";
-import CategorySection from "./components/category-section";
-import Header from "./components/header";
+import { createFileRoute } from "@tanstack/react-router";
+import BookCard from "../components/book-card";
+import CategorySection from "../components/category-section";
 
-function App() {
+export const Route = createFileRoute("/")({
+  component: Index,
+});
+
+function Index() {
   return (
     <>
-      <Header></Header>
       <div className="flex flex-col lg:flex-row ">
         <CategorySection />
 
@@ -40,5 +43,3 @@ function App() {
     </>
   );
 }
-
-export default App;
