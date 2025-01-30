@@ -2,9 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import BookCard from "../components/book-card";
 import CategorySection from "../components/category-section";
 
+
+
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
+
+
+
 
 function Index() {
   return (
