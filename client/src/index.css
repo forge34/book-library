@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
 #root {
   background-color: var(--color-background);
 }
@@ -11,4 +18,17 @@
   --color-accent: #f95a4d; /* Coral Red */
   --color-hover-accent: #ff8777; /* Light Salmon */
   --color-secondary: #757575; /* Cool Gray */
+}
+
+thead tr th:first-child {
+  border-top-left-radius: 12px;
+}
+
+tr th:last-child {
+  border-top-right-radius: 12px;
+}
+
+th,
+td {
+  padding: 0.25rem 0.5rem;
 }
