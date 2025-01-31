@@ -23,41 +23,47 @@ const totalPRice = books.reduce((p, c) => {
 
 function RouteComponent() {
   return (
-    <div className="bg-background grid grid-cols-1 grid-rows-2 gap-8 px-6 py-4 md:grid-cols-2 md:grid-rows-1">
-      <table className="border-separate border-spacing-0">
-        <thead>
-          <tr className="bg-accent text-primary text-left font-bold">
-            <th>#</th>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-          </tr>
-        </thead>
+    <div className="bg-background grid h-[85%] grid-cols-1 grid-rows-2 gap-8 px-6 py-4 md:grid-cols-2 md:grid-rows-1">
+      <div className="l h-full overflow-y-auto">
+        <table className="w-full border-separate border-spacing-0">
+          <thead>
+            <tr className="bg-accent text-primary sticky text-left font-bold">
+              <th>#</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {books.map((e) => {
-            return <TableRow name={e.name} price={e.price} />;
-          })}
-        </tbody>
-      </table>
+          <tbody>
+            {books.map((e) => {
+              return <TableRow key={e.name} name={e.name} price={e.price} />;
+            })}
+          </tbody>
+        </table>
+      </div>
 
       <div className="flex flex-col">
         <h3 className="bg-accent rounded-md px-3 py-1 text-xl font-bold">
-          {" "}
           Checkout
         </h3>
-        {books.map((e) => {
-          return (
-            <div className="flex flex-row px-3 py-2">
-              <p>{e.name}</p>
-              <p className="ml-auto">{e.price + "$"}</p>
-            </div>
-          );
-        })}
+        <div className="flex flex-col overflow-y-auto">
+          {books.map((e) => {
+            return (
+              <div key={e.name} className="flex flex-row px-3 py-2">
+                <p>{e.name}</p>
+                <p className="ml-auto">{e.price + "$"}</p>
+              </div>
+            );
+          })}
+        </div>
 
-        <h3 className="mt-3 ml-8 text-xl font-bold">
+        <h3 className="mt-auto ml-8 text-xl font-bold">
           total : {totalPRice + "$"}
         </h3>
+        <button className="bg-accent text-background self-center rounded-md px-3 py-2 font-bold">
+          Checkout
+        </button>
       </div>
     </div>
   );
