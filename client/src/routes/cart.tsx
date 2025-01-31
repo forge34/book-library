@@ -17,9 +17,13 @@ const books = [
   { name: "War and Peace", price: 18.75 },
 ];
 
+const totalPRice = books.reduce((p, c) => {
+  return p + c.price;
+}, 0);
+
 function RouteComponent() {
   return (
-    <div className="grid grid-cols-1 grid-rows-2 gap-8 px-6 py-4 md:grid-cols-2 md:grid-rows-1 bg-background">
+    <div className="bg-background grid grid-cols-1 grid-rows-2 gap-8 px-6 py-4 md:grid-cols-2 md:grid-rows-1">
       <table className="border-separate border-spacing-0">
         <thead>
           <tr className="bg-accent text-primary text-left font-bold">
@@ -36,6 +40,25 @@ function RouteComponent() {
           })}
         </tbody>
       </table>
+
+      <div className="flex flex-col">
+        <h3 className="bg-accent rounded-md px-3 py-1 text-xl font-bold">
+          {" "}
+          Checkout
+        </h3>
+        {books.map((e) => {
+          return (
+            <div className="flex flex-row px-3 py-2">
+              <p>{e.name}</p>
+              <p className="ml-auto">{e.price + "$"}</p>
+            </div>
+          );
+        })}
+
+        <h3 className="mt-3 ml-8 text-xl font-bold">
+          total : {totalPRice + "$"}
+        </h3>
+      </div>
     </div>
   );
 }
