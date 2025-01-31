@@ -4,6 +4,7 @@ import User from "../assets/user.svg";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "@tanstack/react-router";
 import { Route as aboutRoute } from "../routes/about.tsx";
+import { Route as cartRoute } from "../routes/cart.tsx";
 
 function Row1({ mobile }: { mobile: boolean }) {
   return (
@@ -15,10 +16,12 @@ function Row1({ mobile }: { mobile: boolean }) {
             <Link to={aboutRoute.to} className="text-lg font-extralight">
               About us
             </Link>
-            <div className="bg-primary ml-auto flex flex-row rounded-4xl px-3 py-2 text-white">
-              <img className="invert" src={Cart} />
-              <h3 className="text-md ml-4">0$</h3>
-            </div>
+            <Link className="ml-auto" to={cartRoute.to}>
+              <div className="bg-primary  flex flex-row rounded-4xl px-3 py-2 text-white">
+                <img className="invert" width={20} src={Cart} />
+                <h3 className="text-md ml-4">0$</h3>
+              </div>
+            </Link>
 
             <img
               className="ml-2 rounded-3xl border border-solid p-1"
@@ -34,10 +37,12 @@ function Row1({ mobile }: { mobile: boolean }) {
           <Link to={aboutRoute.to} className="text-lg font-extralight">
             About us
           </Link>
-          <div className="bg-primary ml-auto flex flex-row rounded-4xl px-3 py-2 text-white">
-            <img className="invert" width={20} src={Cart} />
-            <h3 className="text-md ml-2">0$</h3>
-          </div>
+          <Link to={cartRoute.to} className="ml-auto">
+            <div className="bg-primary ml-auto flex flex-row rounded-4xl px-3 py-2 text-white">
+              <img className="invert" width={20} src={Cart} />
+              <h3 className="text-md ml-2">0$</h3>
+            </div>
+          </Link>
           <img
             className="ml-2 rounded-3xl border border-solid p-1"
             src={User}
