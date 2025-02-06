@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as CartImport } from './routes/cart'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as BooksBookidImport } from './routes/books.$bookid'
 
 // Create/Update Routes
 
@@ -32,6 +33,12 @@ const AboutRoute = AboutImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BooksBookidRoute = BooksBookidImport.update({
+  id: '/books/$bookid',
+  path: '/books/$bookid',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CartImport
       parentRoute: typeof rootRoute
     }
+    '/books/$bookid': {
+      id: '/books/$bookid'
+      path: '/books/$bookid'
+      fullPath: '/books/$bookid'
+      preLoaderRoute: typeof BooksBookidImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -69,12 +83,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
+  '/books/$bookid': typeof BooksBookidRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
+  '/books/$bookid': typeof BooksBookidRoute
 }
 
 export interface FileRoutesById {
@@ -82,14 +98,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
+  '/books/$bookid': typeof BooksBookidRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/cart'
+  fullPaths: '/' | '/about' | '/cart' | '/books/$bookid'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/cart'
-  id: '__root__' | '/' | '/about' | '/cart'
+  to: '/' | '/about' | '/cart' | '/books/$bookid'
+  id: '__root__' | '/' | '/about' | '/cart' | '/books/$bookid'
   fileRoutesById: FileRoutesById
 }
 
@@ -97,12 +114,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CartRoute: typeof CartRoute
+  BooksBookidRoute: typeof BooksBookidRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CartRoute: CartRoute,
+  BooksBookidRoute: BooksBookidRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +136,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about",
-        "/cart"
+        "/cart",
+        "/books/$bookid"
       ]
     },
     "/": {
@@ -128,6 +148,9 @@ export const routeTree = rootRoute
     },
     "/cart": {
       "filePath": "cart.tsx"
+    },
+    "/books/$bookid": {
+      "filePath": "books.$bookid.tsx"
     }
   }
 }
