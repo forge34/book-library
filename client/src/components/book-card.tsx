@@ -12,7 +12,7 @@ export default function BookCard(props: BookCardProps) {
 
   return (
     <div
-      className="flex w-fit flex-col rounded-4xl bg-white"
+      className="flex h-max  w-[200px] flex-none flex-col rounded-4xl bg-white"
       onClick={() => {
         navigate({
           to: `/books/$bookid`,
@@ -27,8 +27,8 @@ export default function BookCard(props: BookCardProps) {
         src={props.imgUrl}
       />
 
-      <div className="flex h-full flex-col px-2 py-1">
-        <h3 className="text-primary text-md font-bold">{props.title}</h3>
+      <div className="flex h-full flex-col px-2 py-1 text-wrap">
+        <h3 className="text-primary text-md font-bold break-words">{props.title}</h3>
         <p className="text-hover-accent text-md font-bold">
           {props.price + " $"}
         </p>
