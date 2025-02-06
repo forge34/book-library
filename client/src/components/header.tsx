@@ -12,12 +12,15 @@ function Row1({ mobile }: { mobile: boolean }) {
       {mobile ? (
         <>
           <div className="flex w-full flex-row">
-            <h1 className="font-serif text-2xl">BookHaven</h1>
-            <Link to={aboutRoute.to} className="text-lg font-extralight">
+            <h1 className="font-serif text-3xl">BookHaven</h1>
+            <Link
+              to={aboutRoute.to}
+              className="my-auto text-lg ml-2 font-extralight"
+            >
               About us
             </Link>
             <Link className="ml-auto" to={cartRoute.to}>
-              <div className="bg-primary  flex flex-row rounded-4xl px-3 py-2 text-white">
+              <div className="bg-primary flex flex-row rounded-4xl px-3 py-2 text-white">
                 <img className="invert" width={20} src={Cart} />
                 <h3 className="text-md ml-4">0$</h3>
               </div>
