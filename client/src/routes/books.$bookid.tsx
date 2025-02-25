@@ -34,7 +34,7 @@ function RouteComponent() {
 
       <div className="mt-4">
         <h1 className="text-primary text-2xl font-bold">Related products</h1>
-        <div className="mt-4 flex flex-col justify-between gap-4 md:flex-row">
+        <div className="mx-auto mt-4 flex w-min flex-col gap-4 md:flex-row">
           <BookCard
             title="Atomic habits"
             price={20}
