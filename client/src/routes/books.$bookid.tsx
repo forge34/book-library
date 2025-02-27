@@ -34,36 +34,36 @@ function RouteComponent() {
 
       <div className="mt-4">
         <h1 className="text-primary text-2xl font-bold">Related products</h1>
-        <div className="mx-auto mt-4 flex w-min flex-col gap-4 md:flex-row">
+        <div className="mx-auto mt-4 flex w-min flex-col justify-around gap-4 lg:mx-4 lg:flex-row">
           <BookCard
             title="Atomic habits"
             price={20}
             bookid="1"
-            imgUrl="https://placehold.co/200x250"
+            imgUrl="https://covers.openlibrary.org/b/isbn/9780385533225-M.jpg"
           />
           <BookCard
             title="how to make friends and influence people "
             price={20}
             bookid="2"
-            imgUrl="https://placehold.co/200x250"
+            imgUrl="https://covers.openlibrary.org/b/id/14840757-M.jpg"
           />
           <BookCard
             title="Atomic habits"
             price={20}
             bookid="3"
-            imgUrl="https://placehold.co/200x250"
+            imgUrl="https://covers.openlibrary.org/b/id/14839882-M.jpg"
           />
           <BookCard
             title="Atomic habits"
             price={20}
             bookid="4"
-            imgUrl="https://placehold.co/200x250"
+            imgUrl="https://covers.openlibrary.org/b/id/11610624-M.jpg"
           />
           <BookCard
             title="Atomic habits"
             price={20}
             bookid="5"
-            imgUrl="https://placehold.co/200x250"
+            imgUrl="https://covers.openlibrary.org/b/id/641933-M.jpg"
           />
         </div>
       </div>
