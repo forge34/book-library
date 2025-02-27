@@ -48,7 +48,7 @@ export default function CategorySection() {
         Show Filters
       </button>
       <div
-        className={`absolute flex h-fit flex-none flex-col overflow-hidden rounded-r-2xl bg-white whitespace-nowrap transition-all ease-in-out md:static md:h-full md:px-4 md:py-2 md:transition-none ${showClasses} box-border duration-400 md:w-fit md:opacity-100`}
+        className={`absolute flex h-fit flex-none flex-col overflow-hidden rounded-r-2xl bg-white whitespace-nowrap transition-all ease-in-out md:static md:h-full md:px-4 md:py-2 md:transition-none ${showClasses} box-border duration-400 md:w-fit md:opacity-100 md:ml-6`}
       >
         <div className="flex flex-row overflow-hidden">
           <h1 className="mb-2 self-center text-2xl">Categories</h1>
