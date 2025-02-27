@@ -9,39 +9,39 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <div className="flex flex-col bg-inherit lg:flex-row">
+      <div className="flex h-min flex-col bg-inherit lg:flex-row">
         <CategorySection />
 
-        <div className="grid w-full grid-cols-2 grid-rows-3 lg:grid-cols-4 lg:gap-6">
+        <div className="grid w-full grid-cols-2 lg:ml-8 lg:grid-cols-4 lg:gap-2">
           <BookCard
-            title="Atomic habits"
+            title="The Particular sadness of a cake"
             price={20}
             bookid="1"
-            imgUrl="https://placehold.co/250x250"
+            imgUrl="https://covers.openlibrary.org/b/isbn/9780385533225-M.jpg"
           />
           <BookCard
             title="how to make friends and influence people "
             price={20}
             bookid="2"
-            imgUrl="https://placehold.co/250x250"
+            imgUrl="https://covers.openlibrary.org/b/id/14840757-M.jpg"
           />
           <BookCard
-            title="Atomic habits"
+            title="Onyx Storm"
             price={20}
             bookid="3"
-            imgUrl="https://placehold.co/250x250"
+            imgUrl="https://covers.openlibrary.org/b/id/14839882-M.jpg"
           />
           <BookCard
-            title="Atomic habits"
+            title="The Hired Girl"
             price={20}
             bookid="4"
-            imgUrl="https://placehold.co/250x250"
+            imgUrl="https://covers.openlibrary.org/b/id/11610624-M.jpg"
           />
           <BookCard
-            title="Atomic habits"
+            title="Handbook for writing proposals"
             price={20}
             bookid="5"
-            imgUrl="https://placehold.co/250x250"
+            imgUrl="https://covers.openlibrary.org/b/id/641933-M.jpg"
           />
         </div>
       </div>
