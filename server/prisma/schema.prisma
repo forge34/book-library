@@ -41,10 +41,10 @@ model Book {
 }
 
 model Author {
-  id    String @id
-  name  String
-  books Book[]
-  dateOfBirth DateTime 
+  id          String   @id
+  name        String
+  books       Book[]
+  dateOfBirth DateTime
 }
 
 model Category {
