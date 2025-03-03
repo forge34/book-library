@@ -5,10 +5,12 @@ const databaseUrl =
     ? process.env.TEST_DATABASE_URL
     : process.env.DATABASE_URL;
 
-export const prisma = new PrismaClient({
+const prisma = new PrismaClient({
   datasources: {
     db: {
       url: databaseUrl,
     },
   },
 });
+
+export default prisma;

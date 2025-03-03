@@ -1,7 +1,7 @@
 // import { createServer } from "http";
 import { app } from "../src/app.ts";
 import request from "supertest";
-import { prisma } from "../src/config/prisma.ts";
+import prisma from "../src/config/prisma.ts";
 import { Book } from "@prisma/client";
 
 describe("get all books route", async () => {
