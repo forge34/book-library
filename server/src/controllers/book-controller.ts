@@ -8,4 +8,13 @@ const getAllBooks = expressAsyncHandler(async (req: Request, res: Response) => {
   res.json(books);
 });
 
-export { getAllBooks };
+const getOneBook = expressAsyncHandler(async (req: Request, res: Response) => {
+  const isbn = req.params.isbn;
+  const book = await prisma.book.findFirst({
+    where: { id: isbn },
+  });
+
+  res.json(book);
+});
+
+export { getAllBooks, getOneBook };
