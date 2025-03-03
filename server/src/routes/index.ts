@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllBooks } from "../controllers/book-controller";
+import { getAllBooks, getOneBook } from "../controllers/book-controller";
 
 const router = Router();
 
@@ -8,5 +8,6 @@ router.get("/", (req, res) => {
 });
 
 router.get("/books", getAllBooks);
+router.get("/books/:isbn", getOneBook);
 
 export default router;
