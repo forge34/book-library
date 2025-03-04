@@ -2,7 +2,14 @@
   "name": "book-library",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "client:dev": "cd ./packages/client && vite",
+    "server:dev": "cd ./packages/server && NODE_ENV=development && nodemon src/server.ts"
+  },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
 }
