@@ -2,7 +2,7 @@ import { useNavigate } from "@tanstack/react-router";
 
 interface BookCardProps {
   title: string;
-  imgUrl: string;
+  imgUrl: string | null;
   price: number;
   bookid?: string;
 }
@@ -22,7 +22,7 @@ export default function BookCard(props: BookCardProps) {
     >
       <img
         className="h-[202px] w-[150px] rounded-t-2xl lg:h-[283px] lg:w-[270px]"
-        src={props.imgUrl}
+        src={props.imgUrl || ""}
       />
 
       <div className="flex h-full flex-col px-2 py-1 text-wrap">

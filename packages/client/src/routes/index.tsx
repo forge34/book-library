@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import BookCard from "../components/book-card";
 import CategorySection from "../components/category-section";
 
-const fetchBooks = async () => {
+import type { Book } from "shared";
+
+const fetchBooks = async (): Promise<Array<Book>> => {
   const res = await fetch(`${import.meta.env.VITE_API}/books`);
 
   return res.json();
@@ -23,6 +25,16 @@ function Index() {
         <CategorySection />
 
         <div className="grid w-full grid-cols-2 lg:ml-8 lg:grid-cols-4 lg:gap-2">
+          {data.map((book) => {
+            return (
+              <BookCard
+                title={book.name}
+                price={book.price}
+                bookid={book.id}
+                imgUrl={book.coverImage}
+              />
+            );
+          })}
           <BookCard
             title="The Particular sadness of a cake"
             price={20}
