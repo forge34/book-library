@@ -21,7 +21,8 @@
     "express-async-handler": "^1.2.0",
     "express-validator": "^7.2.1",
     "http-errors": "^2.0.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "shared": "*"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.8",

@@ -2,11 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import BookCard from "../components/book-card";
 import CategorySection from "../components/category-section";
 
+const fetchBooks = async () => {
+  const res = await fetch(`${import.meta.env.VITE_API}/books`);
+
+  return res.json();
+};
+
 export const Route = createFileRoute("/")({
+  loader: () => fetchBooks(),
   component: Index,
 });
 
 function Index() {
+  const data = Route.useLoaderData();
+
+  console.log(data);
   return (
     <>
       <div className="flex h-min flex-col bg-inherit lg:flex-row">
