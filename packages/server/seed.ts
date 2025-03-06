@@ -9,6 +9,7 @@ const books = [
       "A clever fox outsmarts three farmers to provide food for his family.",
     coverImage: "https://covers.openlibrary.org/b/id/240727-M.jpg",
     author: "Roald Dahl",
+    pages: 96,
   },
   {
     id: "OL7353617M",
@@ -17,6 +18,7 @@ const books = [
     description: "A novel about the American dream and the roaring twenties.",
     coverImage: "https://covers.openlibrary.org/b/id/7222246-M.jpg",
     author: "F. Scott Fitzgerald",
+    pages: 180,
   },
   {
     id: "OL82563W",
@@ -26,6 +28,7 @@ const books = [
       "A story of racial injustice and childhood innocence in the Deep South.",
     coverImage: "https://covers.openlibrary.org/b/id/8225265-M.jpg",
     author: "Harper Lee",
+    pages: 281,
   },
   {
     id: "OL232780W",
@@ -34,6 +37,7 @@ const books = [
     description: "A dystopian novel about totalitarianism and surveillance.",
     coverImage: "https://covers.openlibrary.org/b/id/153541-M.jpg",
     author: "George Orwell",
+    pages: 328,
   },
   {
     id: "OL39427W",
@@ -42,6 +46,7 @@ const books = [
     description: "A romantic novel that critiques the British landed gentry.",
     coverImage: "https://covers.openlibrary.org/b/id/8091016-M.jpg",
     author: "Jane Austen",
+    pages: 279,
   },
   {
     id: "OL27448W",
@@ -51,6 +56,7 @@ const books = [
       "The narrative of Captain Ahab's obsessive quest to kill a giant white whale.",
     coverImage: "https://covers.openlibrary.org/b/id/5551236-M.jpg",
     author: "Herman Melville",
+    pages: 635,
   },
   {
     id: "OL20694W",
@@ -60,6 +66,7 @@ const books = [
       "A novel that intertwines the lives of families during the Napoleonic Wars.",
     coverImage: "https://covers.openlibrary.org/b/id/8231991-M.jpg",
     author: "Leo Tolstoy",
+    pages: 1225,
   },
   {
     id: "OL68020W",
@@ -68,6 +75,7 @@ const books = [
     description: "A story about teenage rebellion and angst.",
     coverImage: "https://covers.openlibrary.org/b/id/8231992-M.jpg",
     author: "J.D. Salinger",
+    pages: 214,
   },
   {
     id: "OL36209W",
@@ -76,6 +84,7 @@ const books = [
     description: "A fantasy novel about the adventures of Bilbo Baggins.",
     coverImage: "https://covers.openlibrary.org/b/id/8231993-M.jpg",
     author: "J.R.R. Tolkien",
+    pages: 310,
   },
   {
     id: "OL15379W",
@@ -84,6 +93,7 @@ const books = [
     description: "A psychological novel exploring morality and redemption.",
     coverImage: "https://covers.openlibrary.org/b/id/8231994-M.jpg",
     author: "Fyodor Dostoevsky",
+    pages: 671,
   },
   {
     id: "OL263319W",
@@ -92,6 +102,7 @@ const books = [
     description: "A philosophical novel about faith, doubt, and free will.",
     coverImage: "https://covers.openlibrary.org/b/id/8231995-M.jpg",
     author: "Fyodor Dostoevsky",
+    pages: 824,
   },
   {
     id: "OL40984W",
@@ -101,9 +112,9 @@ const books = [
       "A dystopian novel about a technologically advanced future society.",
     coverImage: "https://covers.openlibrary.org/b/id/8231996-M.jpg",
     author: "Aldous Huxley",
+    pages: 268,
   },
 ];
-
 const authors = [
   {
     id: "OL34184A",
@@ -192,4 +203,4 @@ async function createBooks() {
   }
 }
 
-createBooks()
+createBooks();

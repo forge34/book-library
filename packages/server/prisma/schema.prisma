@@ -30,6 +30,7 @@ model Book {
   id          String     @id
   name        String
   price       Int
+  pages       Int
   categories  Category[]
   description String?
   coverImage  String?
