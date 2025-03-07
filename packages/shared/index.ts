@@ -15,6 +15,6 @@ const bookWithAuthor = Prisma.validator<Prisma.BookDefaultArgs>()({
   },
 });
 
-type bookWithAuthor = Prisma.BookGetPayload<typeof bookWithAuthor>;
+type BookWithAuthor = Prisma.BookGetPayload<typeof bookWithAuthor>;
 
-export type { User, Book, Cart, CartItem, Category, bookWithAuthor };
+export type { User, Book, Cart, CartItem, Category, BookWithAuthor };

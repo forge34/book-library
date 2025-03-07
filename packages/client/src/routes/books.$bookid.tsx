@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import BookCard from "../components/book-card";
-import type { bookWithAuthor } from "shared";
+import type { BookWithAuthor } from "shared";
 
-const fetchBook = async (bookid: string): Promise<bookWithAuthor> => {
+const fetchBook = async (bookid: string): Promise<BookWithAuthor> => {
   const res = await fetch(`${import.meta.env.VITE_API}/books/${bookid}`);
 
   return res.json();
