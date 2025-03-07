@@ -14,6 +14,7 @@ const getOneBook = expressAsyncHandler(async (req: Request, res: Response) => {
     where: { id: isbn },
     include: {
       author: true,
+      categories: true,
     },
   });
 
