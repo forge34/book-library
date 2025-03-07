@@ -12,6 +12,9 @@ const getOneBook = expressAsyncHandler(async (req: Request, res: Response) => {
   const isbn = req.params.isbn;
   const book = await prisma.book.findFirst({
     where: { id: isbn },
+    include: {
+      author: true,
+    },
   });
 
   res.json(book);

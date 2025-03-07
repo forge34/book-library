@@ -2,7 +2,7 @@ import { Author, PrismaClient } from "@prisma/client";
 
 const books = [
   {
-    id: "OL45804W",
+    id: "9780142410349",
     name: "Fantastic Mr. Fox",
     price: 12,
     description:
@@ -12,7 +12,7 @@ const books = [
     pages: 96,
   },
   {
-    id: "OL7353617M",
+    id: "9780743273565",
     name: "The Great Gatsby",
     price: 10,
     description: "A novel about the American dream and the roaring twenties.",
@@ -21,7 +21,7 @@ const books = [
     pages: 180,
   },
   {
-    id: "OL82563W",
+    id: "9780061120084",
     name: "To Kill a Mockingbird",
     price: 8,
     description:
@@ -31,7 +31,7 @@ const books = [
     pages: 281,
   },
   {
-    id: "OL232780W",
+    id: "9780451524935",
     name: "1984",
     price: 9,
     description: "A dystopian novel about totalitarianism and surveillance.",
@@ -40,7 +40,7 @@ const books = [
     pages: 328,
   },
   {
-    id: "OL39427W",
+    id: "9780141439518",
     name: "Pride and Prejudice",
     price: 11,
     description: "A romantic novel that critiques the British landed gentry.",
@@ -49,7 +49,7 @@ const books = [
     pages: 279,
   },
   {
-    id: "OL27448W",
+    id: "9781503280786",
     name: "Moby-Dick",
     price: 13,
     description:
@@ -59,7 +59,7 @@ const books = [
     pages: 635,
   },
   {
-    id: "OL20694W",
+    id: "9781400079988",
     name: "War and Peace",
     price: 15,
     description:
@@ -69,7 +69,7 @@ const books = [
     pages: 1225,
   },
   {
-    id: "OL68020W",
+    id: "9780316769488",
     name: "The Catcher in the Rye",
     price: 9,
     description: "A story about teenage rebellion and angst.",
@@ -78,7 +78,7 @@ const books = [
     pages: 214,
   },
   {
-    id: "OL36209W",
+    id: "9780618260300",
     name: "The Hobbit",
     price: 10,
     description: "A fantasy novel about the adventures of Bilbo Baggins.",
@@ -87,7 +87,7 @@ const books = [
     pages: 310,
   },
   {
-    id: "OL15379W",
+    id: "9780486415871",
     name: "Crime and Punishment",
     price: 14,
     description: "A psychological novel exploring morality and redemption.",
@@ -96,7 +96,7 @@ const books = [
     pages: 671,
   },
   {
-    id: "OL263319W",
+    id: "9780374528379",
     name: "The Brothers Karamazov",
     price: 16,
     description: "A philosophical novel about faith, doubt, and free will.",
@@ -105,7 +105,7 @@ const books = [
     pages: 824,
   },
   {
-    id: "OL40984W",
+    id: "9780060850524",
     name: "Brave New World",
     price: 12,
     description:
