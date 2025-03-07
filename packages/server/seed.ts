@@ -10,6 +10,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/240727-M.jpg",
     author: "Roald Dahl",
     pages: 96,
+    categories: ["Children's Literature"],
   },
   {
     id: "9780743273565",
@@ -19,6 +20,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/7222246-M.jpg",
     author: "F. Scott Fitzgerald",
     pages: 180,
+    categories: ["Classic"],
   },
   {
     id: "9780061120084",
@@ -29,6 +31,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/8225265-M.jpg",
     author: "Harper Lee",
     pages: 281,
+    categories: ["Classic"],
   },
   {
     id: "9780451524935",
@@ -38,6 +41,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/153541-M.jpg",
     author: "George Orwell",
     pages: 328,
+    categories: ["Dystopian"],
   },
   {
     id: "9780141439518",
@@ -47,6 +51,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/8091016-M.jpg",
     author: "Jane Austen",
     pages: 279,
+    categories: ["Romance"],
   },
   {
     id: "9781503280786",
@@ -57,6 +62,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/5551236-M.jpg",
     author: "Herman Melville",
     pages: 635,
+    categories: ["Adventure"],
   },
   {
     id: "9781400079988",
@@ -67,6 +73,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/8231991-M.jpg",
     author: "Leo Tolstoy",
     pages: 1225,
+    categories: ["Historical Fiction"],
   },
   {
     id: "9780316769488",
@@ -76,6 +83,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/8231992-M.jpg",
     author: "J.D. Salinger",
     pages: 214,
+    categories: ["Classic"],
   },
   {
     id: "9780618260300",
@@ -85,6 +93,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/8231993-M.jpg",
     author: "J.R.R. Tolkien",
     pages: 310,
+    categories: ["Fantasy"],
   },
   {
     id: "9780486415871",
@@ -94,6 +103,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/8231994-M.jpg",
     author: "Fyodor Dostoevsky",
     pages: 671,
+    categories: ["Classic"],
   },
   {
     id: "9780374528379",
@@ -103,6 +113,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/8231995-M.jpg",
     author: "Fyodor Dostoevsky",
     pages: 824,
+    categories: ["Classic"],
   },
   {
     id: "9780060850524",
@@ -113,6 +124,7 @@ const books = [
     coverImage: "https://covers.openlibrary.org/b/id/8231996-M.jpg",
     author: "Aldous Huxley",
     pages: 268,
+    categories: ["Dystopian"],
   },
 ];
 const authors = [
@@ -197,6 +209,18 @@ async function createBooks() {
               name: author_name,
             },
           },
+        },
+        categories: {
+          connectOrCreate: book.categories.map((name) => {
+            return {
+              where: {
+                name: name,
+              },
+              create: {
+                name: name,
+              },
+            };
+          }),
         },
       },
     });
