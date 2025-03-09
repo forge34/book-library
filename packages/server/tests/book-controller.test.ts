@@ -23,6 +23,7 @@ describe("get all books route", async () => {
         id: "1",
         price: 20,
         name: "atomic",
+        pages: 20,
       },
     });
 
@@ -42,6 +43,7 @@ describe("get single book route", async () => {
         id: "1",
         price: 20,
         name: "atomic",
+        pages: 20,
       },
     });
 
