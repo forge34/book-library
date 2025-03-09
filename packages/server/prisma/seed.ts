@@ -185,7 +185,6 @@ const authors = [
   },
 ];
 
-console.log(authors);
 
 const prisma = new PrismaClient();
 
@@ -227,4 +226,16 @@ async function createBooks() {
   }
 }
 
-createBooks();
+async function main() {
+  await createBooks();
+}
+
+main()
+  .then(async () => {
+    await prisma.$disconnect();
+  })
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
