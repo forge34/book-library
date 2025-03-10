@@ -22,7 +22,11 @@
     "express-async-handler": "^1.2.0",
     "express-validator": "^7.2.1",
     "http-errors": "^2.0.0",
+    "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
     "shared": "*"
   },
   "devDependencies": {
@@ -32,6 +36,8 @@
     "@types/jest": "^29.5.14",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.13.10",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/passport-local": "^1.0.38",
     "@types/supertest": "^6.0.2",
     "nodemon": "^3.1.9",
     "prisma": "^6.4.1",
