@@ -13,15 +13,15 @@ function Root() {
     <>
       <Header />
       <Outlet />
-      <Footer />
       <TanStackRouterDevtools />
+      <Footer />
     </>
   );
 }
 
 function Footer() {
   return (
-    <div className="bg-primary flex flex-row px-8 py-6 mt-4">
+    <div className="bg-primary blo mt-auto flex h-fit flex-row px-8 py-6">
       <h3 className="text-background text-md">
         Copyright © 2025 Mohamed Abdeltawab (forge34)
       </h3>

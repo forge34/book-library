@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import BookCard from "../components/book-card";
 import CategorySection from "../components/category-section";
 
-import type { Book } from "shared";
+import type { BookWithAuthor } from "shared";
 
-const fetchBooks = async (): Promise<Array<Book>> => {
+const fetchBooks = async (): Promise<Array<BookWithAuthor>> => {
   const res = await fetch(`${import.meta.env.VITE_API}/books`);
 
   return res.json();
@@ -35,36 +35,6 @@ function Index() {
               />
             );
           })}
-          <BookCard
-            title="The Particular sadness of a cake"
-            price={20}
-            bookid="1"
-            imgUrl="https://covers.openlibrary.org/b/isbn/9780385533225-M.jpg"
-          />
-          <BookCard
-            title="how to make friends and influence people "
-            price={20}
-            bookid="2"
-            imgUrl="https://covers.openlibrary.org/b/id/14840757-M.jpg"
-          />
-          <BookCard
-            title="Onyx Storm"
-            price={20}
-            bookid="3"
-            imgUrl="https://covers.openlibrary.org/b/id/14839882-M.jpg"
-          />
-          <BookCard
-            title="The Hired Girl"
-            price={20}
-            bookid="4"
-            imgUrl="https://covers.openlibrary.org/b/id/11610624-M.jpg"
-          />
-          <BookCard
-            title="Handbook for writing proposals"
-            price={20}
-            bookid="5"
-            imgUrl="https://covers.openlibrary.org/b/id/641933-M.jpg"
-          />
         </div>
       </div>
     </>

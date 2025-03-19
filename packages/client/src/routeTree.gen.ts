@@ -11,12 +11,19 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as LoginImport } from './routes/login'
 import { Route as CartImport } from './routes/cart'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as BooksBookidImport } from './routes/books.$bookid'
 
 // Create/Update Routes
+
+const LoginRoute = LoginImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const CartRoute = CartImport.update({
   id: '/cart',
@@ -67,6 +74,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CartImport
       parentRoute: typeof rootRoute
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
     '/books/$bookid': {
       id: '/books/$bookid'
       path: '/books/$bookid'
@@ -83,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
+  '/login': typeof LoginRoute
   '/books/$bookid': typeof BooksBookidRoute
 }
 
@@ -90,6 +105,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
+  '/login': typeof LoginRoute
   '/books/$bookid': typeof BooksBookidRoute
 }
 
@@ -98,15 +114,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/cart': typeof CartRoute
+  '/login': typeof LoginRoute
   '/books/$bookid': typeof BooksBookidRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/cart' | '/books/$bookid'
+  fullPaths: '/' | '/about' | '/cart' | '/login' | '/books/$bookid'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/cart' | '/books/$bookid'
-  id: '__root__' | '/' | '/about' | '/cart' | '/books/$bookid'
+  to: '/' | '/about' | '/cart' | '/login' | '/books/$bookid'
+  id: '__root__' | '/' | '/about' | '/cart' | '/login' | '/books/$bookid'
   fileRoutesById: FileRoutesById
 }
 
@@ -114,6 +131,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CartRoute: typeof CartRoute
+  LoginRoute: typeof LoginRoute
   BooksBookidRoute: typeof BooksBookidRoute
 }
 
@@ -121,6 +139,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CartRoute: CartRoute,
+  LoginRoute: LoginRoute,
   BooksBookidRoute: BooksBookidRoute,
 }
 
@@ -137,6 +156,7 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/cart",
+        "/login",
         "/books/$bookid"
       ]
     },
@@ -148,6 +168,9 @@ export const routeTree = rootRoute
     },
     "/cart": {
       "filePath": "cart.tsx"
+    },
+    "/login": {
+      "filePath": "login.tsx"
     },
     "/books/$bookid": {
       "filePath": "books.$bookid.tsx"
