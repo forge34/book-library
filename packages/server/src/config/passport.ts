@@ -13,7 +13,7 @@ const localVerify: passportLocal.VerifyFunction = async (
 ) => {
   const user = await prisma.user.findFirst({
     where: {
-      username: username,
+      OR: [{ username: username }, { email: username }],
     },
   });
   if (!user) {
