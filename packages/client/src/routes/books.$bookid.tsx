@@ -17,19 +17,19 @@ function RouteComponent() {
   const book = Route.useLoaderData();
   return (
     <div className="bg-background flex flex-col px-4 py-2">
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:mx-auto md:flex-row">
         <img
           src={book.coverImage?.replace("M", "L") || ""}
           className="mx-auto h-[442px] w-[332px] rounded-2xl md:mx-0"
         />
 
         <div className="mx-7 flex flex-col py-2 md:mx-8 md:px-4">
-          <h2 className="text-primary text-2xl md:text-4xl font-bold tracking-wider">
+          <h2 className="text-primary text-2xl font-bold tracking-wider md:text-4xl">
             {book.name}
           </h2>
 
-          <p className="font-light mt-2">{book.description}</p>
-          <p className="text-accent my-2 text-xl md:text-2xl font-bold">
+          <p className="mt-2 font-light">{book.description}</p>
+          <p className="text-accent my-2 text-xl font-bold md:text-2xl">
             {book.price + " $"}
           </p>
 
@@ -44,7 +44,13 @@ function RouteComponent() {
             </button>
             <hr className="bg-primary" />
           </div>
-          <div className="flex flex-col justify-around mt-5">
+          <div className="mt-5 flex flex-col justify-around">
+            <h3>
+              Categories :
+              {book.categories.map((category) => {
+                return <span className="font-light"> {category.name}</span>;
+              })}
+            </h3>
             <h3 className="mt-4">
               Author : <span className="font-light">{book.author?.name}</span>
             </h3>
