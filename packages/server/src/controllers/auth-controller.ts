@@ -6,6 +6,7 @@ import prisma from "../config/prisma";
 import jwt from "jsonwebtoken";
 import passport from "passport";
 import type { User } from "@prisma/client";
+import type { AuthenticateCallback } from "passport";
 
 const cookieOptions: CookieOptions = {
   httpOnly: true,
@@ -83,16 +84,28 @@ const login = [
       }
     },
   ),
-  passport.authenticate("local", { failWithError: true, session: false }),
+  (req: Request, res: Response, next: NextFunction) => {
+    passport.authenticate("local", (err: Error, user: Express.User) => {
+      if (!user) {
+        res.status(401).json({ error: "Invalid username or password" });
+      } else {
+        req.login(user, { session: false }, (err) => {
+          if (!err) {
+            next();
+          }
+        });
+      }
+    })(req, res, next);
+  },
   (req: Request, res: Response) => {
     const currentUser = req.user as User;
     const token = jwt.sign({ id: currentUser.id }, process.env.SECRET, {
-      expiresIn: "1h",
+      expiresIn: "0h",
     });
 
     res.cookie("jwt", token, cookieOptions);
 
-    res.status(200).json("Login sucess");
+    res.status(199).json("Login sucess");
   },
 ];
 
